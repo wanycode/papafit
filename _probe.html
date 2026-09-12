@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>probe</title>
+<style>
+  body { margin: 0; background: #111; }
+  .box { position: relative; width: 526px; }
+  .box img { display: block; width: 526px; }
+  .g { position: absolute; inset: 0; }
+  .g div { position: absolute; border: 1px solid rgba(200,255,61,.55); }
+  .g span { position: absolute; font: 700 10px monospace; color: #c8ff3d; background: rgba(0,0,0,.7); }
+</style>
+</head>
+<body>
+<div class="box">
+  <img src="assets/kevin.jpg" alt="" />
+  <div class="g" id="g"></div>
+</div>
+<script>
+  var g = document.getElementById('g');
+  for (var x = 0; x <= 100; x += 10) {
+    for (var y = 0; y <= 100; y += 10) {
+      var d = document.createElement('div');
+      d.style.left = (x * 526 / 100) + 'px';
+      d.style.top = (y * 556 / 100) + 'px';
+      d.style.width = (10 * 526 / 100) + 'px';
+      d.style.height = (10 * 556 / 100) + 'px';
+      g.appendChild(d);
+      var s = document.createElement('span');
+      s.textContent = x + ',' + y;
+      s.style.left = (x * 526 / 100 + 2) + 'px';
+      s.style.top = (y * 556 / 100 + 12) + 'px';
+      g.appendChild(s);
+    }
+  }
+</script>
+</body>
+</html>
